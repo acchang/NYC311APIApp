@@ -31,11 +31,17 @@ function getFetch(){
   .then(data => {
       console.log(data)
       const lineBreak = document.createElement('br');
-      document.querySelector('h2').appendChild(lineBreak);
-      document.querySelector('h2').innerText = "";
+      // document.querySelector('h2').appendChild(lineBreak);
+      // document.querySelector('h2').innerText = "";
+      document.getElementById('incidentlist').appendChild(lineBreak);
+      document.getElementById('incidentlist').innerText = "";
+
       for (i=0; i<data.length; i++) {
-        document.querySelector('h2').innerText += data[i].complaint_type + " : " + data[i].descriptor
-        document.querySelector('h2').appendChild(lineBreak)
+        // document.querySelector('h2').innerText += data[i].complaint_type + " : " + data[i].descriptor
+        // document.querySelector('h2').appendChild(lineBreak)
+
+        document.getElementById('incidentlist').innerText += data[i].complaint_type + " : " + data[i].descriptor
+        document.getElementById('incidentlist').appendChild(lineBreak)
       }
   })
   .catch(err => {
